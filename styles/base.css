@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page__slider {
+  margin: 22px 0;
+}

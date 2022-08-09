@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Marquee Carousel</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Marquee Slider</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero corporis ipsum at facere
+        eos repudiandae facilis blanditiis corrupti tempore dolor temporibus sit laboriosam numquam
+        quo magni, quos quidem. Sunt, itaque.
+      </p>
+      <p>
+        Temporibus perspiciatis vero tempore sunt. Vero inventore ad consectetur ullam quidem
+        tempore architecto consequuntur, aperiam veritatis aspernatur voluptatum incidunt in.
+        Praesentium, molestiae?
+      </p>
+    </div>
+
+    <div class="page__slider">
+      <div class="marquee-slider">
+        <div class="marquee-slider__track js-slides-left"></div>
+      </div>
+    </div>
+
+    <div class="page__slider">
+      <div class="marquee-slider marquee-slider--right">
+        <div class="marquee-slider__track js-slides-right"></div>
+      </div>
+    </div>
+
+    <script>
+      const createProduct = (i, width, height) => {
+        const product = document.createElement('div')
+        product.classList.add('product')
+        product.innerHTML = `<img class="product__img" src="https://picsum.photos/${width}/${height}?random=${i}" />`
+        return product
+      }
+
+      const createSlide = () => {
+        const slide = document.createElement('div')
+        slide.classList.add('marquee-slider__slide')
+        return slide
+      }
+
+      const totalSlides = 7
+      const $slidesLeft = document.querySelector('.js-slides-left')
+      const $slidesRight = document.querySelector('.js-slides-right')
+
+      const createSlideArray = (startIndex) => {
+        const slidesArray = []
+        for (let i = 0; i < totalSlides; i++) {
+          const slide = createSlide()
+          slide.appendChild(createProduct(startIndex + i, 430, 240))
+          slidesArray.push(slide)
+        }
+        console.log(slidesArray, startIndex)
+        return slidesArray
+      }
+
+      $slidesLeft.append(...createSlideArray(0), ...createSlideArray(0))
+      $slidesRight.append(...createSlideArray(10), ...createSlideArray(10))
+    </script>
+
+    <div class="container">
+      <p>
+        Rerum, sequi iure consequuntur nisi vitae vel nihil eveniet voluptatum minima autem dicta,
+        nobis nesciunt suscipit aut iusto reiciendis et explicabo voluptas!
+      </p>
+
+      <p>
+        Deleniti, quas. Excepturi, officia? Unde enim at itaque eum aspernatur eligendi, expedita
+        quae quasi, aperiam ducimus labore omnis, in molestias cumque tempore.
+      </p>
+    </div>
+  </body>
+</html>
